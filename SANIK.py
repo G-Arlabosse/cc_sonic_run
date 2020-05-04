@@ -4,16 +4,19 @@ pygame.init()
 
 screen = pygame.display.set_mode((1200,600))
 title = pygame.display.set_caption("SANIK")
+
 background = pygame.image.load("images/bakgraounde.png")
 front_ground = pygame.image.load("images/fronte_graounde.png")
 SANIK = pygame.image.load("images/sanik.png")
 
-ded= False
 coordBG1=[0,0]
 coordFG1=[0,455]
 coordBG2=[1200,0]
 coordFG2=[1200,455]
 coordSANIK=[500,350]
+
+ded= False
+
 while not ded:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -30,13 +33,13 @@ while not ded:
                 coordFG1[0]-=30
                 coordFG2[0]-=30
     if coordBG1[0]<=-1200:
-        coordBG1[0]=-1200
+        coordBG1[0]=1200
     if coordBG2[0]<=-1200:
-        coordBG2[0]=-1200
+        coordBG2[0]=1200
     if coordFG1[0]<=-1200:
-        coordFG1[0]=-1200
+        coordFG1[0]=1200
     if coordFG2[0]<=-1200:
-        coordFG2[0]=-1200
+        coordFG2[0]=1200
 
     # Set numéro 1
     screen.blit(background, coordBG1)
